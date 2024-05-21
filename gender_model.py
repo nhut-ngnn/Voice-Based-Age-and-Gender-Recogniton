@@ -2,6 +2,8 @@ import tensorflow as tf
 
 from keras import Sequential
 from keras.layers import LSTM, Dense, Dropout, BatchNormalization
+from keras.callbacks import EarlyStopping
+
 
 from models import train_multi_epoch, train_deepnn
 
@@ -30,11 +32,14 @@ def lstm_gender_model(num_labels):
 def main_class_gender_train():
     dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean"
     model = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/lstm_gender_"
+    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_gender_model, train_deepnn,
                       num_epoch_start=30,
                       num_features=NUM_FEATURES,
-                      file_prefix="gender")
+                      file_prefix="gender",
+                      callbacks=[early_stopping])
 
 
 if __name__ == '__main__':
