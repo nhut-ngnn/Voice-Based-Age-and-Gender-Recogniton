@@ -176,7 +176,7 @@ def create_age_dataset(out_data_path, min_samples=0):
     if min_samples <= 0:
         min_samples = 2 ** 20
 
-    en_input, en_output = get_data("age", english_dataset_path, file_list[5], out_age_file)
+    en_input, en_output = get_data("age", english_dataset_path, file_list[5], out_age_file)     #Change file_list num to choice dataset be extracted
 
     inputs, outputs = clean_age_dataset(en_input, en_output)
     inputs, outputs = create_equal_dataset(inputs, outputs, min_samples)
