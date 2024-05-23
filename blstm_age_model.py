@@ -21,10 +21,14 @@ def lstm_age_model(num_labels):
     model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
+    model.add(Dense(128, activation='relu'))
+    model.add(Dropout(0.3))
+    model.add(BatchNormalization())
     model.add(Dense(64, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
+    optimizer=Adam()
     model.compile(loss='categorical_crossentropy', optimizer=Adam(),
                   metrics=['accuracy'])
     return model
