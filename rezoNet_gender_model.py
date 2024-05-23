@@ -72,7 +72,7 @@ def rezoNet_gender_model(num_labels, learning_rate=0.00001):
 
 def main_class_gender_train():
     dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean_small"
-    model_path = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/cnns_gender_"
+    model_path = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_"
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
     train_multi_epoch(dataset, model_path + str(NUM_FEATURES),
