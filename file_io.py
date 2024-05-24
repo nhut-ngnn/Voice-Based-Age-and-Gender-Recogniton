@@ -104,7 +104,7 @@ def load_metric(filepath):
     history = list()
     with open(filepath, 'r') as file:
         for line in file:
-            values = [np.cfloat(i) for i in line.strip(" \n").split(" ")]
+            values = [np.float16(i) for i in line.strip(" \n").split(" ")]
             values = np.asarray(values)
             history.append(values)
     return np.asarray(history)
