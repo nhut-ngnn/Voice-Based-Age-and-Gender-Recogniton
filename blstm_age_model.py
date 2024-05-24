@@ -35,7 +35,7 @@ def lstm_age_model(num_labels):
 
 
 def main_class_age_train():
-    dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/age_data_clean_small"  
+    dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/age_data_clean"  
     model = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/blstm_age_"
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
