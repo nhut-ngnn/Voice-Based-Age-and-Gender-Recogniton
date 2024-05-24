@@ -1,38 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI1804 Group-3 Assignment Report</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #f4f4f4;
-        }
-    </style>
-</head>
-<body>
 
+<body>
+<h1>Voice-Based Age, Gender, and Emotion Recognition: A Comparative Study of CNNs, LSTM, BiLSTM, and RezoNet Architecture</h1>
 
 <h2>I. PROPOSED SOLUTION</h2>
 <p>The proposed model for voice-based age, gender, and emotion recognition involves a comprehensive feature extraction process. Key features include Mel-Frequency Cepstral Coefficients (MFCC), Delta Mel-Frequency Cepstral Coefficients (delta-MFCC), Delta delta Mel-Frequency Cepstral Coefficients (delta delta-MFCC), Pitch, Filter-Bank Energies, Zero-Crossing Rate (ZCR), and ZCR Density. After that, we are using Principal component analysis (PCA) to reduce feature. In this research, we develop three separate classification models: one for age recognition, one for gender recognition, and one for emotion recognition. We utilize various architectures for classification and recognition, including Support Vector Machine (SVM), Long - Short Term Memory (LSTM), and Convolutional Neural Network (CNN)-based architectures such as DummyNet 1D, RezoNet, and ExpoNet.</p>
@@ -220,4 +188,3 @@
 </ol>
 
 </body>
-</html>
