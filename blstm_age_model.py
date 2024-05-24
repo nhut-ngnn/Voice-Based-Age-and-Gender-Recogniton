@@ -28,8 +28,8 @@ def lstm_age_model(num_labels):
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
-    optimizer=Adam()
-    model.compile(loss='categorical_crossentropy', optimizer=Adam(),
+    optimizer=Adam(0.0001)
+    model.compile(loss='categorical_crossentropy', optimizer=optimizer,
                   metrics=['accuracy'])
     return model
 
@@ -41,7 +41,7 @@ def main_class_age_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_age_model, train_deepnn,
-                      num_epoch_start=50,
+                      num_epoch_start=70,
                       num_features=NUM_FEATURES,
                       file_prefix="age",
                       callbacks=[early_stopping])
