@@ -33,9 +33,6 @@
 </head>
 <body>
 
-<h1>Proposed Solution for Voice-Based Age, Gender, and Emotion Recognition</h1>
-<p><strong>Nguyễn Minh Nhựt</strong> - SE184534, <strong>Nguyễn Thành Trung</strong> - SE180355, <strong>Trịnh Đình Hùng</strong> - SE173408, <strong>Nguyễn Hứa Hiệp</strong> - SE183787<br>
-Group 3, AI1804, FPT University, Ho Chi Minh City Campus</p>
 
 <h2>I. PROPOSED SOLUTION</h2>
 <p>The proposed model for voice-based age, gender, and emotion recognition involves a comprehensive feature extraction process. Key features include Mel-Frequency Cepstral Coefficients (MFCC), Delta Mel-Frequency Cepstral Coefficients (delta-MFCC), Delta delta Mel-Frequency Cepstral Coefficients (delta delta-MFCC), Pitch, Filter-Bank Energies, Zero-Crossing Rate (ZCR), and ZCR Density. After that, we are using Principal component analysis (PCA) to reduce feature. In this research, we develop three separate classification models: one for age recognition, one for gender recognition, and one for emotion recognition. We utilize various architectures for classification and recognition, including Support Vector Machine (SVM), Long - Short Term Memory (LSTM), and Convolutional Neural Network (CNN)-based architectures such as DummyNet 1D, RezoNet, and ExpoNet.</p>
