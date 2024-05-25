@@ -36,7 +36,7 @@ def main_class_gender_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_gender_model, train_deepnn,
-                      num_epoch_start=30,
+                      num_epoch_start=15,
                       num_features=NUM_FEATURES,
                       file_prefix="gender",
                       callbacks=[early_stopping])

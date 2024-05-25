@@ -89,7 +89,7 @@ def plot_figures(pitches, magnitudes):
 
     plt.tight_layout()
     manager = plt.get_current_fig_manager()
-    # manager.window.showMaximized()
+    manager.window.showMaximized()
     manager.window.state('zoomed')
     plt.show()
 
@@ -169,11 +169,11 @@ def model_performance_plot(model_data_path, num_epochs, metrics):
         plt.yticks(np.arange(min_el, max_el + 1, (max_el - min_el) / 5.0 ))
 
         plt.plot(history)
-        plt.title(model_data_path + "-" + metrics[i])
+        plt.title(metrics[i] + " of Gender Model by LSTM")       #Add title of graph in here
         plt.xlabel("epoch")
         plt.ylabel(metrics[i])
         plt.legend(["train", "valid"], loc="upper left")
-    
+
     plt.tight_layout()
     plt.show()
     
@@ -184,7 +184,7 @@ if __name__ == '__main__':
 
     # Dataset plot
     # dataset_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean/gender_out")
-    # dataset_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/age_data_clean_2/age_out")
+    # dataset_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/age_data_clean/age_out")
     
     # Audio features plot
     # data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
@@ -199,10 +199,9 @@ if __name__ == '__main__':
     # plot_figures(pitch_values, magnitude_values)
     # other_feature_plot(file)
 
-    # Model Performance plot
-    model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/lstm_gender_145", 30, ['accuracy'])
-    # model_performance_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/model/lstm_gender_41", 30, ['loss'])
+    # # # Model Performance plot
+    model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_145", 15, ['accuracy'])
+    model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_145", 15, ['loss'])
     
-    # model_performance_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/model/lstm_age_41", 100, ['accuracy'])
-    # model_performance_plot("C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/model/lstm_age_41", 100, ['loss'])
-    
+    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_age_145", 70, ['accuracy'])
+    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_age_145", 70, ['loss'])
