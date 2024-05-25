@@ -66,18 +66,19 @@ def rezoNet_gender_model(num_labels, learning_rate=0.00001):
     outputs = Dense(num_labels, activation='softmax')(x)
     
     model = Model(inputs, outputs)
-    model.compile(loss='categorical_crossentropy', optimizer=Adam(), metrics=['accuracy'])
+    optimizer = Adam(0.0001)
+    model.compile(loss='categorical_crossentropy', optimizer=optimizer, metrics=['accuracy'])
     
     return model
 
 def main_class_gender_train():
-    dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean_small"
+    dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean"
     model_path = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_"
     early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
 
     train_multi_epoch(dataset, model_path + str(NUM_FEATURES),
                       rezoNet_gender_model, train_deepnn,
-                      num_epoch_start=50,
+                      num_epoch_start=15,
                       num_features=NUM_FEATURES,
                       file_prefix="gender",
                       callbacks=[early_stopping])
