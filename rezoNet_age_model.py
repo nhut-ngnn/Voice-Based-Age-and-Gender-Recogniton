@@ -78,7 +78,7 @@ def main_class_age_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       rezoNet_age_model, train_deepnn,
-                      num_epoch_start=70,
+                      num_epoch_start=30,
                       num_features=NUM_FEATURES,
                       file_prefix="age",
                       callbacks=[early_stopping])
