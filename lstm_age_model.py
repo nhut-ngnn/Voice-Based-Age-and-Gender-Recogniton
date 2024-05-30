@@ -8,7 +8,7 @@ from keras.optimizers import Adam
 
 from models import train_multi_epoch, train_deepnn
 
-NUM_FEATURES = 145  
+NUM_FEATURES = 54  
 
 
 def lstm_age_model(num_labels):
@@ -28,8 +28,8 @@ def lstm_age_model(num_labels):
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
     model.add(Dense(num_labels, activation='softmax'))
-    optimizer=Adam(0.0001)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer,
+   
+    model.compile(loss='categorical_crossentropy', optimizer=Adam(0.0002),
                    metrics=['accuracy'])#, metrics.F1Score(threshold=0.5)])
     return model
 
@@ -41,7 +41,7 @@ def main_class_age_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_age_model, train_deepnn,
-                      num_epoch_start=70,
+                      num_epoch_start=60,
                       num_features=NUM_FEATURES,
                       file_prefix="age",
                       callbacks=[early_stopping])
