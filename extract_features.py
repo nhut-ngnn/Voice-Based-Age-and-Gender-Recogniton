@@ -12,8 +12,6 @@ BATCH_SIZE = 128
 SAMPLE_RATE = 44100
 MFCC_FEATURES = 13
 
-# 41
-# mfcc_feature_count -- num of frequency bins in which to split the audio file
 
 
 def get_audio_from_intervals(audio_data, intervals):
@@ -206,5 +204,5 @@ def get_features(prefix, input_files, features):
 
 
 if __name__ == "__main__":
-    features = get_audio_features("C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/DataSet/ja/clips/common_voice_ja_19482480.mp3", extra_features=["delta","delta2","pitch","constract","sdc"])
+    features = get_audio_features("C:/Users/admin/Documents/AgeDetection/voice-bases-age-gender-classification/DataSet/ja/clips/common_voice_ja_19482480.mp3", extra_features=['delta', 'delta2', 'pitch'])
     print(features.shape)
