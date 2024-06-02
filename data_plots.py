@@ -27,6 +27,7 @@ def audio_transform_plot(path):
 
     plt.figure(figsize=(12, 5))
     plt.subplot(4, 2, 1)
+    plt.title("Plotting the Original, Harmonic, and Percussive Components")
     plt.legend(handles=[blue_patch, orange_patch, green_patch])
     y_harmonic = librosa.effects.harmonic(audio_time_series)
     y_percussion = librosa.effects.percussive(audio_time_series)
@@ -36,12 +37,14 @@ def audio_transform_plot(path):
     plt.plot(y_harmonic)
 
     plt.subplot(4, 2, 3)
+    plt.title("Splitting the Audio into Intervals")
     intervals = librosa.effects.split(audio_time_series, top_db=18)
     audio_time_series = get_audio_from_intervals(audio_time_series, intervals)
     plt.plot(audio_time_series)
 
 
     plt.subplot(4, 2, 5)
+    plt.title("Trimming the Audio")
     audio_time_series, _ = librosa.effects.trim(audio_time_series, top_db=10)
     y_harmonic = librosa.effects.harmonic(audio_time_series)
     plt.plot(audio_time_series)
@@ -89,7 +92,7 @@ def plot_figures(pitches, magnitudes):
 
     plt.tight_layout()
     manager = plt.get_current_fig_manager()
-    manager.window.showMaximized()
+    # manager.window.showMaximized()
     manager.window.state('zoomed')
     plt.show()
 
@@ -106,36 +109,36 @@ def other_feature_plot(path):
     contrast = librosa.feature.spectral_contrast(S=stft, sr=sampling_rate)
     tonnetz = librosa.feature.tonnetz(y=librosa.effects.harmonic(audio_time_series),
                                       sr=sampling_rate)
-    center = librosa.feature.spectral_centroid(audio_time_series, sr=sampling_rate, hop_length=128)
+    # center = librosa.feature.spectral_centroid(audio_time_series, sr=sampling_rate, hop_length=128)
 
-    plt.figure(figsize=(12, 4))
+    plt.figure(figsize=(12, 3))
     plt.subplot(5, 1, 1)
     plt.plot(audio_time_series)
     plt.title("Audio data")
 
-    plt.subplot(5, 1, 2)
-    print(chroma.shape)
-    librosa.display.specshow(chroma)
-    plt.colorbar()
-    plt.title("Chromagram")
+    # plt.subplot(5, 1, 2)
+    # print(chroma.shape)
+    # librosa.display.specshow(chroma)
+    # plt.colorbar()
+    # plt.title("Chromagram")
 
-    plt.subplot(5, 1, 3)
-    print(contrast.shape)
-    librosa.display.specshow(contrast)
-    plt.colorbar()
-    plt.title("Spectral contrast")
+    # plt.subplot(5, 1, 3)
+    # print(contrast.shape)
+    # librosa.display.specshow(contrast)
+    # plt.colorbar()
+    # plt.title("Spectral contrast")
 
-    plt.subplot(5, 1, 4)
-    print(tonnetz.shape)
-    librosa.display.specshow(tonnetz)
-    plt.colorbar()
-    plt.title("Tonnetz features")
+    # plt.subplot(5, 1, 4)
+    # print(tonnetz.shape)
+    # librosa.display.specshow(tonnetz)
+    # plt.colorbar()
+    # plt.title("Tonnetz features")
 
-    plt.subplot(5, 1, 5)
-    print(center.shape)
-    librosa.display.specshow(center, x_axis='time')
-    plt.colorbar()
-    plt.title("Spectral center")
+    # plt.subplot(5, 1, 5)
+    # print(center.shape)
+    # librosa.display.specshow(center, x_axis='time')
+    # plt.colorbar()
+    # plt.title("Spectral center")
 
     plt.show()
 
@@ -169,7 +172,6 @@ def model_performance_plot(model_data_path, num_epochs, metrics):
         plt.yticks(np.arange(min_el, max_el + 1, (max_el - min_el) / 5.0 ))
 
         plt.plot(history)
-        plt.title(metrics[i] + " of Gender Model by LSTM")       #Add title of graph in here
         plt.xlabel("epoch")
         plt.ylabel(metrics[i])
         plt.legend(["train", "valid"], loc="upper left")
@@ -184,24 +186,24 @@ if __name__ == '__main__':
 
     # Dataset plot
     # dataset_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean/gender_out")
-    # dataset_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/age_data_clean/age_out")
+    # dataset_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/age_data_clean_test/age_out")
     
     # Audio features plot
-    # data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
+    data_path = "C:/Users/Admin/Documents/AgeDetection/voice-bases-age-gender-classification/audio/"
 
-    # file = os.listdir(data_path)[0]
-    # file = Path(data_path + file)
-    # duration = librosa.core.get_duration(filename=str(file))
+    file = os.listdir(data_path)[0]
+    file = Path(data_path + file)
+    duration = librosa.core.get_duration(filename=str(file))
 
-    # audio_transform_plot(file)
-    # mfcc_features_plot(file)
-    # audio_data, pitch_values, magnitude_values = get_pitch_magnitude(file, SAMPLE_RATE)
-    # plot_figures(pitch_values, magnitude_values)
-    # other_feature_plot(file)
+    audio_transform_plot(file)
+    mfcc_features_plot(file)
+    audio_data, pitch_values, magnitude_values = get_pitch_magnitude(file, SAMPLE_RATE)
+    plot_figures(pitch_values, magnitude_values)
+    other_feature_plot(file)
 
-    # # # Model Performance plot
-    model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_145", 15, ['accuracy'])
-    model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_gender_145", 15, ['loss'])
+    # Model Performance plot
+    # model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project1/model/cnns_gender_54", 15, ['accuracy'])
+    # model_performance_plot("C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/cnns_gender_54", 15, ['loss'])
     
-    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_age_145", 70, ['accuracy'])
-    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/rezoNet_age_145", 70, ['loss'])
+    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/lstm_age_54", 60, ['accuracy'])
+    # model_performance_plot("C:/Users/Admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/lstm_age_54", 60, ['loss'])
