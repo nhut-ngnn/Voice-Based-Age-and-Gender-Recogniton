@@ -19,8 +19,8 @@ def lstm_age_model(num_labels):
     model.add(Dropout(0.3))
     
     # BiLSTM layers
-    model.add(Bidirectional(LSTM(256, return_sequences=True, dropout=0.3, recurrent_dropout=0.3)))
-    model.add(Bidirectional(LSTM(256, dropout=0.3, recurrent_dropout=0.3)))
+    model.add(Bidirectional(LSTM(128, return_sequences=True, dropout=0.3, recurrent_dropout=0.3)))
+    model.add(Bidirectional(LSTM(128, dropout=0.3, recurrent_dropout=0.3)))
     
     # Dense layers with Batch Normalization and Dropout
     model.add(Dense(256, activation='relu'))

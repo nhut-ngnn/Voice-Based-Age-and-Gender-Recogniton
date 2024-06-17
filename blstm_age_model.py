@@ -1,36 +1,35 @@
-
-import keras_metrics as km
-from keras import metrics
+import tensorflow as tf
 from keras import Sequential
-from keras.layers import LSTM, Dense, Dropout, BatchNormalization, Bidirectional
+from keras.layers import Conv1D, MaxPooling1D, LSTM, Dense, Dropout, BatchNormalization, Bidirectional
 from keras.callbacks import EarlyStopping
 from keras.optimizers import Adam
-
 from models import train_multi_epoch, train_deepnn
 
-NUM_FEATURES = 145  
+NUM_FEATURES = 54  
 
-
+ 
 def lstm_age_model(num_labels):
-    model = Sequential() 
-    model.add(Bidirectional(LSTM(256, dropout=0.3, return_sequences=True), input_shape=(35, NUM_FEATURES)))
-    model.add(Bidirectional(LSTM(256, dropout=0.3)))
-    model.add(Dense(128 * 2, activation='relu'))
+    model = Sequential()     
+    # BiLSTM layers
+    model.add(Bidirectional(LSTM(256, return_sequences=True, dropout=0.3, recurrent_dropout=0.3), input_shape=(35, NUM_FEATURES)))
+    model.add(Bidirectional(LSTM(256, dropout=0.3, recurrent_dropout=0.3)))
+    
+    # Dense layers with Batch Normalization and Dropout
+    model.add(Dense(256, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
+    
     model.add(Dense(128, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
-    model.add(Dense(128, activation='relu'))
-    model.add(Dropout(0.3))
-    model.add(BatchNormalization())
+    
     model.add(Dense(64, activation='relu'))
     model.add(Dropout(0.3))
     model.add(BatchNormalization())
+    
     model.add(Dense(num_labels, activation='softmax'))
-    optimizer=Adam(0.0001)
-    model.compile(loss='categorical_crossentropy', optimizer=optimizer,
-                  metrics=['accuracy'])
+    model.compile(loss='categorical_crossentropy', optimizer=Adam(0.0001), metrics=['accuracy'])
+    model.summary()
     return model
 
 
@@ -41,7 +40,7 @@ def main_class_age_train():
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       lstm_age_model, train_deepnn,
-                      num_epoch_start=70,
+                      num_epoch_start=60,
                       num_features=NUM_FEATURES,
                       file_prefix="age",
                       callbacks=[early_stopping])

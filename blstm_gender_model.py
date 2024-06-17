@@ -26,7 +26,7 @@ def cnns_gender_model(num_labels):
     model.add(BatchNormalization())
 
     model.add(Dense(num_labels, activation='softmax'))
-    model.compile(loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(loss='categorical_crossentropy', metrics=['accuracy'], optimizer=Adam(0.0001))
     model.summary()
     return model
 
@@ -34,7 +34,7 @@ def cnns_gender_model(num_labels):
 def main_class_gender_train():
     dataset = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/gender_data_clean"
     model = "C:/Users/admin/Documents/Voice_Based_Age_Gender_and_Emotion/New_Project/model/blstm_gender_"
-    early_stopping = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True)
+    early_stopping = EarlyStopping(monitor='val_loss', patience=3, restore_best_weights=True)
 
     train_multi_epoch(dataset, model + str(NUM_FEATURES),
                       cnns_gender_model, train_deepnn,
