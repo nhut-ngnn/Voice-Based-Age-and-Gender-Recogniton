@@ -7,6 +7,15 @@
 <img src="https://img.shields.io/badge/Written%20by-Nguyen%20Minh%20Nhut-pink?style=for-the-badge"> 
 </p>
 
+
+<p align="center">
+<img src="https://img.shields.io/badge/Long%20Short%20Term%20Memory-white"> 
+<img src="https://img.shields.io/badge/Bidirectional%20Long%20Short%20Term%20Memory-white">
+<img src="https://img.shields.io/badge/Histrogram%20of%20oriented%20gradient-white?style=flat">     
+<img src="https://img.shields.io/badge/RezoNet-white">     
+<img src="https://img.shields.io/badge/Hybrid%20CNN_BiLSTM-white">
+</p>
+
 ## Contact
 For any information, please contact the main author:
 
