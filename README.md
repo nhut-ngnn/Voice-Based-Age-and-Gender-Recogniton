@@ -1,4 +1,4 @@
-# Voice-Based Age, Gender, and Emotion Recognition: A Comparative Study of CNNs, LSTM, BiLSTM, and RezoNet Architecture</h1>
+# Voice-Based Age and Gender recognize: A Comparative Study of LSTM, RezoNet, and Hybrid CNNs-BiLSTM Architecture</h1>
 
 > Please press ⭐ button and/or cite papers if you feel helpful.
 
