@@ -1,5 +1,5 @@
 # Voice-Based Age and Gender recognize: A Comparative Study of LSTM, RezoNet, and Hybrid CNNs-BiLSTM Architecture</h1>
-<i>Official implementation for the paper: **Voice-Based Age and Gender Recognition: A Comparative Study of LSTM, RezoNet and Hybrid CNNs-BiLSTM Architecture.** The paper has been accepted to <i href="https://ictc.org/">The 15th International Conference on ICT Convergence (ICTC2024)</i></i>
+<i>Official implementation for the paper: **Voice-Based Age and Gender Recognition: A Comparative Study of LSTM, RezoNet and Hybrid CNNs-BiLSTM Architecture.** The paper has been accepted to <a href="https://ictc.org/">The 15th International Conference on ICT Convergence (ICTC2024).</a></i>
 > Please press ⭐ button and/or cite papers if you feel helpful.
 
 <p align="center">
