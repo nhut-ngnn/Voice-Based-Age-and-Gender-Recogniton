@@ -7,6 +7,12 @@
 <img src="https://img.shields.io/badge/Written%20by-Nguyen%20Minh%20Nhut-pink?style=for-the-badge"> 
 </p>
 
+<p align="center">
+<img src="https://img.shields.io/github/stars/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
+<img src="https://img.shields.io/github/forks/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
+<img src="https://img.shields.io/github/watchers/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
+</p>
+
 
 <p align="center">
 <img src="https://img.shields.io/badge/Long%20Short%20Term%20Memory-white"> 
