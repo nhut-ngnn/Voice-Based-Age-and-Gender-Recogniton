@@ -1,4 +1,4 @@
-# Voice-Based Age and Gender recognize: A Comparative Study of LSTM, RezoNet, and Hybrid CNNs-BiLSTM Architecture</h1>
+# Voice-Based Age and Gender Recognition: A Comparative Study of LSTM, RezoNet, and Hybrid CNNs-BiLSTM Architecture</h1>
 <i>Official implementation for the paper: **Voice-Based Age and Gender Recognition: A Comparative Study of LSTM, RezoNet and Hybrid CNNs-BiLSTM Architecture.** The paper has been accepted to <a href="https://ictc.org/">The 15th International Conference on ICT Convergence (ICTC2024).</a></i>
 > Please press ⭐ button and/or cite papers if you feel helpful.
 
@@ -52,12 +52,7 @@ conda activate Voice-Based-Age-and-Gender-Recogniton
 conda install pytorch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2 pytorch-cuda=11.8 -c pytorch -c nvidia
 pip install -r requirements.txt
 ```
-### Extract feature 
-It will be updated soon
-### Training process
-It will be updated soon
-### Testing process
-It will be updated soon
+
 ## Contact
 For any information, please contact the main author:
 
