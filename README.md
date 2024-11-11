@@ -32,9 +32,6 @@
   - [Dataset](#dataset)
   - [Clone this repository](#clone-this-repository)
   - [Create Conda Enviroment and Install Requirement](#create-conda-enviroment-and-install-requirement)
-  - [Extract feature](#extract-feature)
-  - [Training process](#training-process)
-  - [Testing process](#testing-process)
 - [Contact](#Contact)
 ## Usage
 ### Dataset
