@@ -6,7 +6,7 @@
 <p align="center">
 <img src="https://img.shields.io/github/stars/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
 <img src="https://img.shields.io/github/forks/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
-<img src="https://img.shields.io/github/watchers/nhut-ngnn/Voice-Based-Age-and-Gender-Recogniton">
+<a href=""><img src="https://img.shields.io/github/license/namphuongtran9196/4m-ser?" alt="license"></a>
 </p>
 
 <div align="center">
